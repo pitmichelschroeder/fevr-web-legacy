@@ -1,0 +1,27 @@
+{
+  "SignIn": {
+    "meta_title": "Sign in to FEVR",
+    "meta_description": "Sign in to your FEVR account and access the future of VR casino gaming."
+  },
+  "SignUp": {
+    "meta_title": "Join FEVR",
+    "meta_description": "Create your FEVR account and join the revolution in VR casino gaming."
+  },
+  "Dashboard": {
+    "meta_title": "FEVR Dashboard",
+    "hello_message": "Welcome to FEVR, {email}!",
+    "alternative_message": "Get ready for the future of VR casino gaming."
+  },
+  "UserProfile": {
+    "meta_title": "FEVR Profile"
+  },
+  "DashboardLayout": {
+    "dashboard_link": "Dashboard",
+    "user_profile_link": "Manage your account",
+    "sign_out": "Sign out"
+  },
+  "BaseTemplate": {
+    "description": "The Future of VR Casino Gaming",
+    "made_with": "Made with ❤️ by {author}"
+  }
+}
