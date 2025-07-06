@@ -5,45 +5,71 @@ import { WaitlistForm } from '@/components/WaitlistForm';
 export default function Index() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-950 via-black to-indigo-950 text-white relative overflow-hidden">
-      {/* Dynamic Matrix Background */}
+      {/* Animated Morphing Circles Background */}
       <div className="absolute inset-0">
-        {/* Animated Matrix Rain */}
-        <div className="absolute inset-0 opacity-20">
-          {Array.from({ length: 50 }).map((_, i) => (
-            <div
-              key={`matrix-${i}-${Math.random().toString(36).substr(2, 9)}`}
-              className="absolute text-green-400 text-xs font-mono animate-pulse"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `-${Math.random() * 100}px`,
-                animationDelay: `${Math.random() * 5}s`,
-                animationDuration: `${3 + Math.random() * 4}s`,
-                animationIterationCount: 'infinite',
-              }}
-            >
-              {Math.random() > 0.5 ? '1' : '0'}
-            </div>
-          ))}
-        </div>
-
-        {/* Floating Geometric Shapes */}
+        {/* Large Morphing Circles */}
         <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-6 h-6 border-2 border-cyan-400 rotate-45 animate-spin" style={{ animationDuration: '8s' }}></div>
-          <div className="absolute top-40 right-20 w-8 h-8 border-2 border-purple-400 animate-bounce" style={{ animationDelay: '1s' }}></div>
-          <div className="absolute bottom-40 left-20 w-4 h-4 bg-green-400 rounded-full animate-ping" style={{ animationDelay: '2s' }}></div>
-          <div className="absolute top-60 left-1/3 w-10 h-10 border-2 border-pink-400 rounded-full animate-pulse" style={{ animationDelay: '3s' }}></div>
-          <div className="absolute bottom-60 right-1/3 w-6 h-6 bg-blue-400 transform rotate-45 animate-bounce" style={{ animationDelay: '4s' }}></div>
+          {/* Circle 1 - Top Left */}
+          <div 
+            className="absolute w-96 h-96 rounded-full bg-gradient-to-r from-green-400/10 to-cyan-400/10 blur-2xl animate-morphCircle1"
+            style={{ 
+              top: '10%', 
+              left: '10%',
+              animationDelay: '0s'
+            }}
+          ></div>
+          
+          {/* Circle 2 - Top Right */}
+          <div 
+            className="absolute w-80 h-80 rounded-full bg-gradient-to-r from-purple-400/15 to-pink-400/15 blur-2xl animate-morphCircle2"
+            style={{ 
+              top: '20%', 
+              right: '15%',
+              animationDelay: '2s'
+            }}
+          ></div>
+          
+          {/* Circle 3 - Bottom Left */}
+          <div 
+            className="absolute w-72 h-72 rounded-full bg-gradient-to-r from-blue-400/12 to-indigo-400/12 blur-2xl animate-morphCircle3"
+            style={{ 
+              bottom: '25%', 
+              left: '20%',
+              animationDelay: '4s'
+            }}
+          ></div>
+          
+          {/* Circle 4 - Bottom Right */}
+          <div 
+            className="absolute w-88 h-88 rounded-full bg-gradient-to-r from-cyan-400/8 to-teal-400/8 blur-2xl animate-morphCircle4"
+            style={{ 
+              bottom: '15%', 
+              right: '10%',
+              animationDelay: '1s'
+            }}
+          ></div>
+          
+          {/* Circle 5 - Center */}
+          <div 
+            className="absolute w-64 h-64 rounded-full bg-gradient-to-r from-violet-400/10 to-purple-400/10 blur-3xl animate-morphCircle5"
+            style={{ 
+              top: '50%', 
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              animationDelay: '3s'
+            }}
+          ></div>
+          
+          {/* Circle 6 - Middle Left */}
+          <div 
+            className="absolute w-56 h-56 rounded-full bg-gradient-to-r from-emerald-400/8 to-green-400/8 blur-2xl animate-morphCircle6"
+            style={{ 
+              top: '40%', 
+              left: '5%',
+              animationDelay: '5s'
+            }}
+          ></div>
         </div>
-
-        {/* Enhanced Animated Gradients */}
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-green-400/10 to-transparent animate-pulse" style={{ animationDuration: '3s' }}></div>
-        <div className="absolute inset-0 bg-gradient-to-l from-transparent via-purple-400/10 to-transparent animate-pulse" style={{ animationDuration: '4s', animationDelay: '1s' }}></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-transparent via-cyan-400/5 to-transparent animate-pulse" style={{ animationDuration: '5s', animationDelay: '2s' }}></div>
-
-        {/* Pulsing Orbs with Different Colors */}
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-r from-green-400/20 to-cyan-400/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '0s', animationDuration: '6s' }}></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-r from-purple-400/15 to-pink-400/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s', animationDuration: '8s' }}></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-r from-blue-400/10 to-indigo-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s', animationDuration: '10s' }}></div>
 
         {/* Blackjack Cards Background */}
         <div className="absolute bottom-0 right-0 w-2/5 h-3/5 opacity-40 pointer-events-none">
@@ -107,7 +133,7 @@ export default function Index() {
           <div className="w-full max-w-6xl mx-auto text-center">
 
             {/* Main Headline Section */}
-            <section className="pt-24 pb-16 sm:pt-32 sm:pb-20 lg:pt-40 lg:pb-24 animate-fadeInUp" style={{ animationDelay: '0.3s' }}>
+            <section className="pt-40 pb-16 sm:pt-48 sm:pb-20 lg:pt-56 lg:pb-24 animate-fadeInUp" style={{ animationDelay: '0.3s' }}>
               <div className="space-y-6 lg:space-y-8 relative">
                 {/* Animated Background Elements */}
                 <div className="absolute -inset-20 pointer-events-none">
@@ -116,7 +142,7 @@ export default function Index() {
                   <div className="absolute bottom-0 left-0 w-28 h-28 border border-green-400/30 rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
                 </div>
 
-                <div className="relative animate-slideInRight" style={{ animationDelay: '0.6s' }}>
+                <div className="relative animate-fadeIn" style={{ animationDelay: '0.6s' }}>
                   <h1
                     className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight relative z-10"
                     style={{
@@ -125,20 +151,20 @@ export default function Index() {
                       backgroundSize: '400% 400%',
                       WebkitBackgroundClip: 'text',
                       WebkitTextFillColor: 'transparent',
-                      animation: 'gradientShift 3s ease-in-out infinite',
+                      animation: 'gradientShift 8s ease-in-out infinite',
                     }}
                   >
                     THE FUTURE OF GAMING
                   </h1>
 
-                  {/* Text glow effect */}
+                  {/* Subtle text glow effect */}
                   <div className="absolute inset-0 z-0">
                     <h1
-                      className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight opacity-50 blur-sm"
+                      className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight opacity-20 blur-sm"
                       style={{
                         fontFamily: 'Oxanium, monospace',
                         color: '#00ff88',
-                        textShadow: '0 0 30px rgba(0, 255, 136, 0.8)',
+                        textShadow: '0 0 15px rgba(0, 255, 136, 0.4)',
                       }}
                     >
                       THE FUTURE OF GAMING
@@ -169,6 +195,124 @@ export default function Index() {
               @keyframes gradientShift {
                 0%, 100% { background-position: 0% 50%; }
                 50% { background-position: 100% 50%; }
+              }
+              
+              @keyframes morphCircle1 {
+                0%, 100% { 
+                  transform: scale(1) translate(0, 0);
+                  border-radius: 50%;
+                }
+                25% { 
+                  transform: scale(1.3) translate(20px, -30px);
+                  border-radius: 60% 40% 30% 70%;
+                }
+                50% { 
+                  transform: scale(0.8) translate(-15px, 25px);
+                  border-radius: 30% 60% 70% 40%;
+                }
+                75% { 
+                  transform: scale(1.1) translate(10px, -20px);
+                  border-radius: 40% 30% 60% 70%;
+                }
+              }
+              
+              @keyframes morphCircle2 {
+                0%, 100% { 
+                  transform: scale(1) translate(0, 0);
+                  border-radius: 50%;
+                }
+                33% { 
+                  transform: scale(1.2) translate(-25px, 20px);
+                  border-radius: 70% 30% 50% 50%;
+                }
+                66% { 
+                  transform: scale(0.9) translate(30px, -15px);
+                  border-radius: 40% 60% 30% 70%;
+                }
+              }
+              
+              @keyframes morphCircle3 {
+                0%, 100% { 
+                  transform: scale(1) translate(0, 0);
+                  border-radius: 50%;
+                }
+                20% { 
+                  transform: scale(1.4) translate(15px, -20px);
+                  border-radius: 60% 40% 80% 20%;
+                }
+                60% { 
+                  transform: scale(0.7) translate(-20px, 30px);
+                  border-radius: 20% 80% 40% 60%;
+                }
+                80% { 
+                  transform: scale(1.1) translate(25px, -10px);
+                  border-radius: 50% 50% 30% 70%;
+                }
+              }
+              
+              @keyframes morphCircle4 {
+                0%, 100% { 
+                  transform: scale(1) translate(0, 0);
+                  border-radius: 50%;
+                }
+                40% { 
+                  transform: scale(1.1) translate(-30px, -25px);
+                  border-radius: 30% 70% 60% 40%;
+                }
+                70% { 
+                  transform: scale(1.3) translate(20px, 15px);
+                  border-radius: 70% 30% 40% 60%;
+                }
+              }
+              
+              @keyframes morphCircle5 {
+                0%, 100% { 
+                  transform: translate(-50%, -50%) scale(1);
+                  border-radius: 50%;
+                }
+                30% { 
+                  transform: translate(-50%, -50%) scale(1.2);
+                  border-radius: 40% 60% 70% 30%;
+                }
+                60% { 
+                  transform: translate(-50%, -50%) scale(0.8);
+                  border-radius: 60% 40% 30% 70%;
+                }
+              }
+              
+              @keyframes morphCircle6 {
+                0%, 100% { 
+                  transform: scale(1) translate(0, 0);
+                  border-radius: 50%;
+                }
+                50% { 
+                  transform: scale(1.5) translate(35px, -40px);
+                  border-radius: 80% 20% 50% 50%;
+                }
+              }
+              
+              .animate-morphCircle1 {
+                animation: morphCircle1 12s ease-in-out infinite;
+              }
+              
+              .animate-morphCircle2 {
+                animation: morphCircle2 15s ease-in-out infinite;
+              }
+              
+              .animate-morphCircle3 {
+                animation: morphCircle3 18s ease-in-out infinite;
+              }
+              
+              .animate-morphCircle4 {
+                animation: morphCircle4 14s ease-in-out infinite;
+              }
+              
+              .animate-morphCircle5 {
+                animation: morphCircle5 16s ease-in-out infinite;
+              }
+              
+              .animate-morphCircle6 {
+                animation: morphCircle6 20s ease-in-out infinite;
               }
               
               @keyframes fadeIn {
