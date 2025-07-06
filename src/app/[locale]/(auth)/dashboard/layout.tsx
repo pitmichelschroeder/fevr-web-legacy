@@ -1,59 +1,25 @@
-import { SignOutButton } from '@clerk/nextjs';
-import { getTranslations, setRequestLocale } from 'next-intl/server';
-import Link from 'next/link';
-import { LocaleSwitcher } from '@/components/LocaleSwitcher';
-import { BaseTemplate } from '@/templates/BaseTemplate';
-
-export default async function DashboardLayout(props: {
+export default function DashboardLayout(props: {
   children: React.ReactNode;
-  params: Promise<{ locale: string }>;
 }) {
-  const { locale } = await props.params;
-  setRequestLocale(locale);
-  const t = await getTranslations({
-    locale,
-    namespace: 'DashboardLayout',
-  });
-
   return (
-    <BaseTemplate
-      leftNav={(
-        <>
-          <li>
-            <Link
-              href="/dashboard/"
-              className="border-none text-gray-700 hover:text-gray-900"
-            >
-              {t('dashboard_link')}
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/dashboard/user-profile/"
-              className="border-none text-gray-700 hover:text-gray-900"
-            >
-              {t('user_profile_link')}
-            </Link>
-          </li>
-        </>
-      )}
-      rightNav={(
-        <>
-          <li>
-            <SignOutButton>
-              <button className="border-none text-gray-700 hover:text-gray-900" type="button">
-                {t('sign_out')}
-              </button>
-            </SignOutButton>
-          </li>
+    <div className="w-full px-1 text-gray-700 antialiased">
+      <div className="mx-auto max-w-screen-md">
+        <header className="border-b border-gray-300">
+          <div className="pb-8 pt-16">
+            <h1 className="text-3xl font-bold text-gray-900">
+              FEVR Dashboard
+            </h1>
+            <h2 className="text-xl">VR Casino Gaming Platform</h2>
+          </div>
+        </header>
 
-          <li>
-            <LocaleSwitcher />
-          </li>
-        </>
-      )}
-    >
-      {props.children}
-    </BaseTemplate>
+        <main>{props.children}</main>
+
+        <footer className="border-t border-gray-300 py-8 text-center text-sm">
+          {`© Copyright ${new Date().getFullYear()} FEVR. `}
+          VR Casino Gaming Platform
+        </footer>
+      </div>
+    </div>
   );
 }

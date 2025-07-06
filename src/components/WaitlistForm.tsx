@@ -1,10 +1,10 @@
 'use client';
 
-import type { WaitlistFormData } from '@/validations/WaitlistValidation';
+import type { SimpleWaitlistFormData } from '@/validations/WaitlistValidation';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { WaitlistValidation } from '@/validations/WaitlistValidation';
+import { SimpleWaitlistValidation } from '@/validations/WaitlistValidation';
 
 export const WaitlistForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -17,11 +17,11 @@ export const WaitlistForm = () => {
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm<WaitlistFormData>({
-    resolver: zodResolver(WaitlistValidation),
+  } = useForm<SimpleWaitlistFormData>({
+    resolver: zodResolver(SimpleWaitlistValidation),
   });
 
-  const onSubmit = async (data: WaitlistFormData) => {
+  const onSubmit = async (data: SimpleWaitlistFormData) => {
     setIsSubmitting(true);
     setError(null);
 
@@ -31,7 +31,10 @@ export const WaitlistForm = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+          ...data,
+          isVrOwner: false,
+        }),
       });
 
       const result = await response.json();
@@ -52,128 +55,70 @@ export const WaitlistForm = () => {
 
   if (isSuccess) {
     return (
-      <div className="max-w-md mx-auto p-6 bg-green-50 border border-green-200 rounded-lg">
-        <div className="text-center">
-          <h3 className="text-lg font-semibold text-green-800 mb-2">
-            Welcome to FEVR!
-          </h3>
-          <p className="text-green-700 mb-4">
-            You're successfully added to our exclusive waitlist.
-          </p>
-          {waitlistPosition && (
-            <p className="text-sm text-green-600">
-              Your position: #
-              {waitlistPosition}
-            </p>
-          )}
+      <div className="text-center space-y-4">
+        <div className="w-16 h-16 bg-green-400 rounded-full flex items-center justify-center mx-auto">
+          <svg className="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+          </svg>
         </div>
+        <h3 className="text-2xl font-bold text-white" style={{ fontFamily: 'Oxanium, monospace' }}>
+          Welcome to the future
+        </h3>
+        <p className="text-gray-400" style={{ fontFamily: 'Oxanium, monospace' }}>
+          You're on the waitlist
+        </p>
+        {waitlistPosition && (
+          <p className="text-sm text-green-400 bg-green-400/10 border border-green-400/20 rounded-lg px-4 py-2 inline-block" style={{ fontFamily: 'Oxanium, monospace' }}>
+            Position #
+            {waitlistPosition}
+          </p>
+        )}
       </div>
     );
   }
 
   return (
-    <div className="max-w-md mx-auto">
+    <div className="w-full max-w-sm mx-auto">
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-        <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-            Email Address *
-          </label>
+        <div className="space-y-3">
           <input
             {...register('email')}
             type="email"
             id="email"
-            className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-            placeholder="Enter your email"
+            className="w-full px-4 py-4 bg-gray-900 border border-gray-700 rounded-lg focus:outline-none focus:border-green-400 focus:ring-1 focus:ring-green-400 transition-all duration-200 text-white placeholder-gray-400"
+            placeholder="Enter your email address"
+            style={{ fontFamily: 'Oxanium, monospace' }}
           />
           {errors.email && (
-            <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>
+            <p className="text-sm text-red-400" style={{ fontFamily: 'Oxanium, monospace' }}>{errors.email.message}</p>
           )}
         </div>
 
-        <div className="grid grid-cols-2 gap-4">
-          <div>
-            <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-1">
-              First Name
-            </label>
-            <input
-              {...register('firstName')}
-              type="text"
-              id="firstName"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-              placeholder="John"
-            />
-          </div>
-          <div>
-            <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-1">
-              Last Name
-            </label>
-            <input
-              {...register('lastName')}
-              type="text"
-              id="lastName"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-              placeholder="Doe"
-            />
-          </div>
-        </div>
-
-        <div className="flex items-center space-x-2">
-          <input
-            {...register('isVrOwner')}
-            type="checkbox"
-            id="isVrOwner"
-            className="h-4 w-4 text-purple-600 focus:ring-purple-500 border-gray-300 rounded"
-          />
-          <label htmlFor="isVrOwner" className="text-sm font-medium text-gray-700">
-            I own a VR headset
-          </label>
-        </div>
-
-        <div>
-          <label htmlFor="vrHeadset" className="block text-sm font-medium text-gray-700 mb-1">
-            VR Headset (if applicable)
-          </label>
-          <select
-            {...register('vrHeadset')}
-            id="vrHeadset"
-            className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-          >
-            <option value="">Select your headset</option>
-            <option value="Meta Quest 3">Meta Quest 3</option>
-            <option value="Meta Quest 2">Meta Quest 2</option>
-            <option value="Apple Vision Pro">Apple Vision Pro</option>
-            <option value="PICO 4">PICO 4</option>
-            <option value="HTC Vive">HTC Vive</option>
-            <option value="Valve Index">Valve Index</option>
-            <option value="Other">Other</option>
-          </select>
-        </div>
-
-        <div>
-          <label htmlFor="referralCode" className="block text-sm font-medium text-gray-700 mb-1">
-            Referral Code (optional)
-          </label>
-          <input
-            {...register('referralCode')}
-            type="text"
-            id="referralCode"
-            className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-            placeholder="Enter referral code"
-          />
-        </div>
-
         {error && (
-          <div className="p-3 bg-red-50 border border-red-200 rounded-md">
-            <p className="text-sm text-red-600">{error}</p>
+          <div className="p-3 bg-red-900/20 border border-red-500/30 rounded-lg">
+            <p className="text-sm text-red-400" style={{ fontFamily: 'Oxanium, monospace' }}>{error}</p>
           </div>
         )}
 
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold py-3 px-4 rounded-md hover:from-purple-700 hover:to-pink-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
+          className="w-full bg-green-400 hover:bg-green-300 text-black font-bold py-4 px-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-black disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
+          style={{ fontFamily: 'Oxanium, monospace' }}
         >
-          {isSubmitting ? 'Joining Waitlist...' : 'Join the Waitlist'}
+          {isSubmitting
+            ? (
+                <span className="flex items-center justify-center">
+                  <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                  JOINING...
+                </span>
+              )
+            : (
+                'JOIN THE WAITLIST'
+              )}
         </button>
       </form>
     </div>

@@ -1,16 +1,6 @@
-import { getTranslations } from 'next-intl/server';
-
-export async function generateMetadata(props: {
-  params: Promise<{ locale: string }>;
-}) {
-  const { locale } = await props.params;
-  const t = await getTranslations({
-    locale,
-    namespace: 'Dashboard',
-  });
-
+export async function generateMetadata() {
   return {
-    title: t('meta_title'),
+    title: 'FEVR Dashboard - VR Casino Gaming',
   };
 }
 
