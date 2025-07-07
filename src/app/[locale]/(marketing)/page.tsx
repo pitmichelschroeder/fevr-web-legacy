@@ -10,113 +10,84 @@ export default function Index() {
         {/* Large Morphing Circles */}
         <div className="absolute inset-0">
           {/* Circle 1 - Top Left */}
-          <div 
+          <div
             className="absolute w-96 h-96 rounded-full bg-gradient-to-r from-green-400/10 to-cyan-400/10 blur-2xl animate-morphCircle1"
-            style={{ 
-              top: '10%', 
+            style={{
+              top: '10%',
               left: '10%',
-              animationDelay: '0s'
+              animationDelay: '0s',
             }}
-          ></div>
-          
+          >
+          </div>
+
           {/* Circle 2 - Top Right */}
-          <div 
+          <div
             className="absolute w-80 h-80 rounded-full bg-gradient-to-r from-purple-400/15 to-pink-400/15 blur-2xl animate-morphCircle2"
-            style={{ 
-              top: '20%', 
+            style={{
+              top: '20%',
               right: '15%',
-              animationDelay: '2s'
+              animationDelay: '2s',
             }}
-          ></div>
-          
+          >
+          </div>
+
           {/* Circle 3 - Bottom Left */}
-          <div 
+          <div
             className="absolute w-72 h-72 rounded-full bg-gradient-to-r from-blue-400/12 to-indigo-400/12 blur-2xl animate-morphCircle3"
-            style={{ 
-              bottom: '25%', 
+            style={{
+              bottom: '25%',
               left: '20%',
-              animationDelay: '4s'
+              animationDelay: '4s',
             }}
-          ></div>
-          
+          >
+          </div>
+
           {/* Circle 4 - Bottom Right */}
-          <div 
+          <div
             className="absolute w-88 h-88 rounded-full bg-gradient-to-r from-cyan-400/8 to-teal-400/8 blur-2xl animate-morphCircle4"
-            style={{ 
-              bottom: '15%', 
+            style={{
+              bottom: '15%',
               right: '10%',
-              animationDelay: '1s'
+              animationDelay: '1s',
             }}
-          ></div>
-          
+          >
+          </div>
+
           {/* Circle 5 - Center */}
-          <div 
+          <div
             className="absolute w-64 h-64 rounded-full bg-gradient-to-r from-violet-400/10 to-purple-400/10 blur-3xl animate-morphCircle5"
-            style={{ 
-              top: '50%', 
+            style={{
+              top: '50%',
               left: '50%',
               transform: 'translate(-50%, -50%)',
-              animationDelay: '3s'
+              animationDelay: '3s',
             }}
-          ></div>
-          
+          >
+          </div>
+
           {/* Circle 6 - Middle Left */}
-          <div 
+          <div
             className="absolute w-56 h-56 rounded-full bg-gradient-to-r from-emerald-400/8 to-green-400/8 blur-2xl animate-morphCircle6"
-            style={{ 
-              top: '40%', 
+            style={{
+              top: '40%',
               left: '5%',
-              animationDelay: '5s'
+              animationDelay: '5s',
             }}
-          ></div>
-        </div>
-
-        {/* Blackjack Cards Background */}
-        <div className="absolute bottom-0 right-0 w-2/5 h-3/5 opacity-40 pointer-events-none">
-          <div className="relative w-full h-full">
-            {/* Card 1 - Ace of Spades */}
-            <div className="absolute bottom-16 right-16 w-40 h-56 bg-gray-800/90 rounded-2xl border-4 border-green-400/30 transform rotate-12 shadow-2xl animate-slideInRight" style={{ boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 20px rgba(57, 255, 20, 0.2)', animationDelay: '1.0s' }}>
-              <div className="p-4 text-green-400 text-lg font-bold">A</div>
-              <div className="flex items-center justify-center h-full">
-                <svg className="w-16 h-16 text-green-400" fill="currentColor" viewBox="0 0 24 24" style={{ filter: 'drop-shadow(0 0 8px rgba(57, 255, 20, 0.6))' }}>
-                  <path d="M12 2L8.5 8.5H2L7 12L5 18.5L12 15L19 18.5L17 12L22 8.5H15.5L12 2Z" />
-                </svg>
-              </div>
-              <div className="absolute bottom-4 right-4 text-green-400 text-lg font-bold transform rotate-180">A</div>
-            </div>
-
-            {/* Card 2 - King */}
-            <div className="absolute bottom-24 right-28 w-40 h-56 bg-gray-800/90 rounded-2xl border-4 border-green-400/30 transform -rotate-6 shadow-2xl animate-slideInRight" style={{ boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 20px rgba(57, 255, 20, 0.2)', animationDelay: '1.3s' }}>
-              <div className="p-4 text-green-400 text-lg font-bold">K</div>
-              <div className="flex items-center justify-center h-full">
-                <svg className="w-14 h-14 text-green-400" fill="currentColor" viewBox="0 0 24 24" style={{ filter: 'drop-shadow(0 0 8px rgba(57, 255, 20, 0.6))' }}>
-                  <path d="M12 6C13.1 6 14 6.9 14 8S13.1 10 12 10 10 9.1 10 8 10.9 6 12 6M21 9V7L15 1H5C3.89 1 3 1.89 3 3V21C3 22.11 3.89 23 5 23H19C20.11 23 21 22.11 21 21V9M19 9H14V7H19V9Z" />
-                </svg>
-              </div>
-              <div className="absolute bottom-4 right-4 text-green-400 text-lg font-bold transform rotate-180">K</div>
-            </div>
-
-            {/* Card 3 - Queen */}
-            <div className="absolute bottom-32 right-40 w-40 h-56 bg-gray-800/90 rounded-2xl border-4 border-green-400/30 transform rotate-3 shadow-2xl animate-slideInRight" style={{ boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 20px rgba(57, 255, 20, 0.2)', animationDelay: '1.6s' }}>
-              <div className="p-4 text-green-400 text-lg font-bold">Q</div>
-              <div className="flex items-center justify-center h-full">
-                <svg className="w-14 h-14 text-green-400" fill="currentColor" viewBox="0 0 24 24" style={{ filter: 'drop-shadow(0 0 8px rgba(57, 255, 20, 0.6))' }}>
-                  <path d="M12 2C13.1 2 14 2.9 14 4S13.1 6 12 6 10 5.1 10 4 10.9 2 12 2M21 9V7L15 1H5C3.89 1 3 1.89 3 3V21C3 22.11 3.89 23 5 23H19C20.11 23 21 22.11 21 21V9M19V9Z" />
-                </svg>
-              </div>
-              <div className="absolute bottom-4 right-4 text-green-400 text-lg font-bold transform rotate-180">Q</div>
-            </div>
+          >
           </div>
         </div>
+
+
       </div>
 
-      {/* Header */}
-      <div className="absolute top-12 left-1/2 transform -translate-x-1/2 z-10 animate-fadeInDown">
+      {/* Header with darker background area */}
+      <div className="absolute top-0 left-0 w-full h-24 bg-black/40 backdrop-blur-sm border-b border-green-400/10 z-20"></div>
+      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 z-30 animate-fadeInDown flex items-center justify-center h-24">
         <div className="relative">
           <h1
             className="text-5xl font-bold text-green-400 drop-shadow-lg animate-pulse"
             style={{
-              fontFamily: 'Oxanium, monospace',
+              fontFamily: 'var(--font-orbitron)',
               textShadow: '0 0 20px rgba(57, 255, 20, 0.8), 0 0 40px rgba(57, 255, 20, 0.5), 0 0 60px rgba(57, 255, 20, 0.3)',
             }}
           >
@@ -127,26 +98,100 @@ export default function Index() {
         </div>
       </div>
 
+      {/* Blackjack Cards Background - Hero Section */}
+      <div className="absolute top-0 right-0 w-full h-screen pointer-events-none z-5">
+        <div className="relative w-full h-full">
+          {/* Position cards next to waitlist form in hero section */}
+          <div className="absolute top-1/2 right-8 w-96 h-80 opacity-60 transform -translate-y-1/2" style={{ transform: 'translateY(calc(-50% + 18rem))' }}>
+            
+            {/* Floating sparkles/particles */}
+            <div className="absolute top-10 right-20 w-2 h-2 bg-cyan-400 rounded-full animate-ping" style={{ animationDelay: '0s', animationDuration: '3s' }}></div>
+            <div className="absolute top-32 right-8 w-1 h-1 bg-purple-400 rounded-full animate-ping" style={{ animationDelay: '1.5s', animationDuration: '2s' }}></div>
+            <div className="absolute top-64 right-32 w-1.5 h-1.5 bg-green-400 rounded-full animate-ping" style={{ animationDelay: '2.5s', animationDuration: '2.5s' }}></div>
+
+            {/* Card 1 - Ace of Spades */}
+            <div className="absolute top-0 right-0 w-36 h-48 bg-gradient-to-br from-gray-900 via-gray-800 to-black rounded-2xl border-2 border-cyan-400/40 transform rotate-15 shadow-2xl animate-slideInRight animate-floatCard1" style={{ boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.9), 0 0 25px rgba(0, 255, 255, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1)', animationDelay: '1.0s' }}>
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/5 to-transparent rounded-2xl"></div>
+              <div className="p-3 text-cyan-400 text-xl font-bold" style={{ fontFamily: 'var(--font-orbitron)' }}>A</div>
+              <div className="flex items-center justify-center h-full">
+                <svg className="w-16 h-16 text-cyan-400" fill="currentColor" viewBox="0 0 100 100" style={{ filter: 'drop-shadow(0 0 10px rgba(0, 255, 255, 0.8))' }}>
+                  <path d="M50 10 L35 35 L10 35 L30 55 L22 80 L50 65 L78 80 L70 55 L90 35 L65 35 Z" />
+                </svg>
+              </div>
+              <div className="absolute bottom-3 right-3 text-cyan-400 text-xl font-bold transform rotate-180" style={{ fontFamily: 'var(--font-orbitron)' }}>A</div>
+              <div className="absolute top-3 right-3 text-cyan-400 text-sm">♠</div>
+            </div>
+
+            {/* Card 2 - King of Hearts */}
+            <div className="absolute top-12 right-12 w-36 h-48 bg-gradient-to-br from-gray-900 via-gray-800 to-black rounded-2xl border-2 border-red-400/40 transform -rotate-8 shadow-2xl animate-slideInRight animate-floatCard2" style={{ boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.9), 0 0 25px rgba(255, 0, 100, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1)', animationDelay: '1.3s' }}>
+              <div className="absolute inset-0 bg-gradient-to-br from-red-400/5 to-transparent rounded-2xl"></div>
+              <div className="p-3 text-red-400 text-xl font-bold" style={{ fontFamily: 'var(--font-orbitron)' }}>K</div>
+              <div className="flex items-center justify-center h-full">
+                <svg className="w-14 h-14 text-red-400" fill="currentColor" viewBox="0 0 100 100" style={{ filter: 'drop-shadow(0 0 10px rgba(255, 0, 100, 0.8))' }}>
+                  <path d="M50 20 C60 20 70 30 70 40 C70 50 60 60 50 60 C40 60 30 50 30 40 C30 30 40 20 50 20 Z M35 65 L50 50 L65 65 L50 80 Z" />
+                </svg>
+              </div>
+              <div className="absolute bottom-3 right-3 text-red-400 text-xl font-bold transform rotate-180" style={{ fontFamily: 'var(--font-orbitron)' }}>K</div>
+              <div className="absolute top-3 right-3 text-red-400 text-sm">♥</div>
+            </div>
+
+            {/* Card 3 - Queen of Diamonds */}
+            <div className="absolute top-24 right-24 w-36 h-48 bg-gradient-to-br from-gray-900 via-gray-800 to-black rounded-2xl border-2 border-orange-400/40 transform rotate-4 shadow-2xl animate-slideInRight animate-floatCard3" style={{ boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.9), 0 0 25px rgba(255, 165, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1)', animationDelay: '1.6s' }}>
+              <div className="absolute inset-0 bg-gradient-to-br from-orange-400/5 to-transparent rounded-2xl"></div>
+              <div className="p-3 text-orange-400 text-xl font-bold" style={{ fontFamily: 'var(--font-orbitron)' }}>Q</div>
+              <div className="flex items-center justify-center h-full">
+                <svg className="w-14 h-14 text-orange-400" fill="currentColor" viewBox="0 0 100 100" style={{ filter: 'drop-shadow(0 0 10px rgba(255, 165, 0, 0.8))' }}>
+                  <path d="M50 20 L70 50 L50 80 L30 50 Z" />
+                </svg>
+              </div>
+              <div className="absolute bottom-3 right-3 text-orange-400 text-xl font-bold transform rotate-180" style={{ fontFamily: 'var(--font-orbitron)' }}>Q</div>
+              <div className="absolute top-3 right-3 text-orange-400 text-sm">♦</div>
+            </div>
+
+            {/* Card 4 - Jack of Clubs */}
+            <div className="absolute top-36 right-36 w-36 h-48 bg-gradient-to-br from-gray-900 via-gray-800 to-black rounded-2xl border-2 border-green-400/40 transform -rotate-12 shadow-2xl animate-slideInRight animate-floatCard4" style={{ boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.9), 0 0 25px rgba(0, 255, 100, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1)', animationDelay: '1.9s' }}>
+              <div className="absolute inset-0 bg-gradient-to-br from-green-400/5 to-transparent rounded-2xl"></div>
+              <div className="p-3 text-green-400 text-xl font-bold" style={{ fontFamily: 'var(--font-orbitron)' }}>J</div>
+              <div className="flex items-center justify-center h-full">
+                <svg className="w-14 h-14 text-green-400" fill="currentColor" viewBox="0 0 100 100" style={{ filter: 'drop-shadow(0 0 10px rgba(0, 255, 100, 0.8))' }}>
+                  <path d="M30 20 L50 20 L70 40 L70 60 L50 80 L30 60 L30 40 Z M40 30 L60 30 L60 50 L40 50 Z" />
+                </svg>
+              </div>
+              <div className="absolute bottom-3 right-3 text-green-400 text-xl font-bold transform rotate-180" style={{ fontFamily: 'var(--font-orbitron)' }}>J</div>
+              <div className="absolute top-3 right-3 text-green-400 text-sm">♣</div>
+            </div>
+
+            {/* Card 5 - 10 of Spades */}
+            <div className="absolute top-48 right-48 w-36 h-48 bg-gradient-to-br from-gray-900 via-gray-800 to-black rounded-2xl border-2 border-purple-400/40 transform rotate-8 shadow-2xl animate-slideInRight animate-floatCard5" style={{ boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.9), 0 0 25px rgba(150, 0, 255, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1)', animationDelay: '2.2s' }}>
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-400/5 to-transparent rounded-2xl"></div>
+              <div className="p-3 text-purple-400 text-xl font-bold" style={{ fontFamily: 'var(--font-orbitron)' }}>10</div>
+              <div className="flex items-center justify-center h-full">
+                <svg className="w-16 h-16 text-purple-400" fill="currentColor" viewBox="0 0 100 100" style={{ filter: 'drop-shadow(0 0 10px rgba(150, 0, 255, 0.8))' }}>
+                  <path d="M50 10 L35 35 L10 35 L30 55 L22 80 L50 65 L78 80 L70 55 L90 35 L65 35 Z" />
+                </svg>
+              </div>
+              <div className="absolute bottom-3 right-3 text-purple-400 text-xl font-bold transform rotate-180" style={{ fontFamily: 'var(--font-orbitron)' }}>10</div>
+              <div className="absolute top-3 right-3 text-purple-400 text-sm">♠</div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
       {/* Main Content */}
-      <div className="relative px-4 sm:px-6 lg:px-8">
+      <div className="relative px-4 sm:px-6 lg:px-8 z-10">
         <div className="flex flex-col items-center justify-center min-h-screen">
           <div className="w-full max-w-6xl mx-auto text-center">
 
             {/* Main Headline Section */}
             <section className="pt-40 pb-16 sm:pt-48 sm:pb-20 lg:pt-56 lg:pb-24 animate-fadeInUp" style={{ animationDelay: '0.3s' }}>
               <div className="space-y-6 lg:space-y-8 relative">
-                {/* Animated Background Elements */}
-                <div className="absolute -inset-20 pointer-events-none">
-                  <div className="absolute top-0 left-0 w-32 h-32 border border-cyan-400/30 rounded-full animate-spin" style={{ animationDuration: '20s' }}></div>
-                  <div className="absolute top-0 right-0 w-24 h-24 border border-purple-400/30 animate-ping" style={{ animationDelay: '1s' }}></div>
-                  <div className="absolute bottom-0 left-0 w-28 h-28 border border-green-400/30 rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
-                </div>
 
                 <div className="relative animate-fadeIn" style={{ animationDelay: '0.6s' }}>
                   <h1
                     className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight relative z-10"
                     style={{
-                      fontFamily: 'Oxanium, monospace',
+                      fontFamily: 'var(--font-orbitron)',
                       background: 'linear-gradient(45deg, #00ff88, #00ccff, #ff00ff, #ffff00, #00ff88)',
                       backgroundSize: '400% 400%',
                       WebkitBackgroundClip: 'text',
@@ -162,7 +207,7 @@ export default function Index() {
                     <h1
                       className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight opacity-20 blur-sm"
                       style={{
-                        fontFamily: 'Oxanium, monospace',
+                        fontFamily: 'var(--font-orbitron)',
                         color: '#00ff88',
                         textShadow: '0 0 15px rgba(0, 255, 136, 0.4)',
                       }}
@@ -176,7 +221,7 @@ export default function Index() {
                   <p
                     className="text-lg sm:text-xl lg:text-2xl font-light max-w-3xl mx-auto leading-relaxed animate-pulse"
                     style={{
-                      fontFamily: 'Oxanium, monospace',
+                      fontFamily: 'var(--font-inter)',
                       color: '#00ccff',
                       textShadow: '0 0 15px rgba(0, 204, 255, 0.6)',
                     }}
@@ -184,8 +229,6 @@ export default function Index() {
                     FEVR is coming. The game will never feel the same again.
                   </p>
 
-                  {/* Typing effect simulation */}
-                  <div className="absolute right-0 top-0 w-1 h-8 bg-cyan-400 animate-pulse" style={{ animationDuration: '1s' }}></div>
                 </div>
               </div>
             </section>
@@ -404,6 +447,51 @@ export default function Index() {
                 animation: scaleIn 0.8s ease-out forwards;
                 opacity: 0;
               }
+
+              @keyframes floatCard1 {
+                0%, 100% { transform: rotate(15deg) translateY(0px); }
+                50% { transform: rotate(15deg) translateY(-8px); }
+              }
+
+              @keyframes floatCard2 {
+                0%, 100% { transform: rotate(-8deg) translateY(0px); }
+                50% { transform: rotate(-8deg) translateY(-12px); }
+              }
+
+              @keyframes floatCard3 {
+                0%, 100% { transform: rotate(4deg) translateY(0px); }
+                50% { transform: rotate(4deg) translateY(-6px); }
+              }
+
+              @keyframes floatCard4 {
+                0%, 100% { transform: rotate(-12deg) translateY(0px); }
+                50% { transform: rotate(-12deg) translateY(-10px); }
+              }
+
+              @keyframes floatCard5 {
+                0%, 100% { transform: rotate(8deg) translateY(0px); }
+                50% { transform: rotate(8deg) translateY(-7px); }
+              }
+
+              .animate-floatCard1 {
+                animation: floatCard1 4s ease-in-out infinite;
+              }
+
+              .animate-floatCard2 {
+                animation: floatCard2 5s ease-in-out infinite;
+              }
+
+              .animate-floatCard3 {
+                animation: floatCard3 4.5s ease-in-out infinite;
+              }
+
+              .animate-floatCard4 {
+                animation: floatCard4 5.5s ease-in-out infinite;
+              }
+
+              .animate-floatCard5 {
+                animation: floatCard5 4.2s ease-in-out infinite;
+              }
             `}
             </style>
 
@@ -414,7 +502,7 @@ export default function Index() {
                   <WaitlistForm />
                 </div>
 
-                <p className="text-sm text-gray-500 max-w-md mx-auto animate-fadeIn" style={{ fontFamily: 'Oxanium, monospace', animationDelay: '1.8s' }}>
+                <p className="text-sm text-gray-500 max-w-md mx-auto animate-fadeIn" style={{ fontFamily: 'var(--font-inter)', animationDelay: '1.8s' }}>
                   Join thousands already on the list. Be first to experience FEVR.
                 </p>
               </div>
@@ -422,12 +510,6 @@ export default function Index() {
 
             {/* Feature Boxes Section */}
             <section className="py-16 sm:py-20 lg:py-24 relative animate-fadeInUp" style={{ animationDelay: '2.1s' }}>
-              {/* Section Background Effects */}
-              <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute top-10 left-10 w-4 h-4 bg-cyan-400 rounded-full animate-ping" style={{ animationDelay: '0s' }}></div>
-                <div className="absolute top-20 right-20 w-6 h-6 border-2 border-purple-400 rotate-45 animate-spin" style={{ animationDuration: '6s' }}></div>
-                <div className="absolute bottom-10 left-1/4 w-5 h-5 bg-green-400 animate-bounce" style={{ animationDelay: '1s' }}></div>
-              </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto relative z-10">
 
@@ -448,14 +530,14 @@ export default function Index() {
                   <h3
                     className="text-lg lg:text-xl font-bold mb-2 relative z-10"
                     style={{
-                      fontFamily: 'Oxanium, monospace',
+                      fontFamily: 'var(--font-orbitron)',
                       color: '#00ff88',
                       textShadow: '0 0 10px rgba(0, 255, 136, 0.6)',
                     }}
                   >
                     Built on trust
                   </h3>
-                  <p className="text-sm text-gray-300 relative z-10" style={{ fontFamily: 'Oxanium, monospace' }}>
+                  <p className="text-sm text-gray-300 relative z-10" style={{ fontFamily: 'Inter, sans-serif' }}>
                     Blockchain security
                   </p>
                 </div>
@@ -477,14 +559,14 @@ export default function Index() {
                   <h3
                     className="text-lg lg:text-xl font-bold mb-2 relative z-10"
                     style={{
-                      fontFamily: 'Oxanium, monospace',
+                      fontFamily: 'var(--font-orbitron)',
                       color: '#ff00ff',
                       textShadow: '0 0 10px rgba(255, 0, 255, 0.6)',
                     }}
                   >
                     Powered by crypto
                   </h3>
-                  <p className="text-sm text-gray-300 relative z-10" style={{ fontFamily: 'Oxanium, monospace' }}>
+                  <p className="text-sm text-gray-300 relative z-10" style={{ fontFamily: 'Inter, sans-serif' }}>
                     Instant transactions
                   </p>
                 </div>
@@ -506,14 +588,14 @@ export default function Index() {
                   <h3
                     className="text-lg lg:text-xl font-bold mb-2 relative z-10"
                     style={{
-                      fontFamily: 'Oxanium, monospace',
+                      fontFamily: 'var(--font-orbitron)',
                       color: '#00ccff',
                       textShadow: '0 0 10px rgba(0, 204, 255, 0.6)',
                     }}
                   >
                     Designed for thrill
                   </h3>
-                  <p className="text-sm text-gray-300 relative z-10" style={{ fontFamily: 'Oxanium, monospace' }}>
+                  <p className="text-sm text-gray-300 relative z-10" style={{ fontFamily: 'Inter, sans-serif' }}>
                     Adrenaline rush
                   </p>
                 </div>

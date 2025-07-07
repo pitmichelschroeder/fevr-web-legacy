@@ -1,10 +1,23 @@
 import type { Metadata } from 'next';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
+import { Inter, Orbitron } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import { PostHogProvider } from '@/components/analytics/PostHogProvider';
 import { routing } from '@/libs/I18nRouting';
 import '@/styles/global.css';
+
+const orbitron = Orbitron({
+  subsets: ['latin'],
+  weight: ['400', '700', '900'],
+  variable: '--font-orbitron',
+});
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-inter',
+});
 
 export const metadata: Metadata = {
   title: {
@@ -81,7 +94,7 @@ export default async function RootLayout(props: {
   setRequestLocale(locale);
 
   return (
-    <html lang={locale}>
+    <html lang={locale} className={`${orbitron.variable} ${inter.variable}`}>
       <body>
         <NextIntlClientProvider>
           <PostHogProvider>

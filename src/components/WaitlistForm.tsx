@@ -61,14 +61,14 @@ export const WaitlistForm = () => {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="text-2xl font-bold text-white" style={{ fontFamily: 'Oxanium, monospace' }}>
+        <h3 className="text-2xl font-bold text-white" style={{ fontFamily: 'var(--font-orbitron)' }}>
           Welcome to the future
         </h3>
-        <p className="text-gray-400" style={{ fontFamily: 'Oxanium, monospace' }}>
+        <p className="text-gray-400" style={{ fontFamily: 'Inter, sans-serif' }}>
           You're on the waitlist
         </p>
         {waitlistPosition && (
-          <p className="text-sm text-green-400 bg-green-400/10 border border-green-400/20 rounded-lg px-4 py-2 inline-block" style={{ fontFamily: 'Oxanium, monospace' }}>
+          <p className="text-sm text-green-400 bg-green-400/10 border border-green-400/20 rounded-lg px-4 py-2 inline-block" style={{ fontFamily: 'Inter, sans-serif' }}>
             Position #
             {waitlistPosition}
           </p>
@@ -87,7 +87,7 @@ export const WaitlistForm = () => {
             id="email"
             className="w-full px-4 py-4 bg-gray-900 border border-gray-700 rounded-lg focus:outline-none focus:border-green-400 focus:ring-1 focus:ring-green-400 transition-all duration-200 text-white placeholder-gray-400"
             placeholder="Enter your email address"
-            style={{ fontFamily: 'Oxanium, monospace' }}
+            style={{ fontFamily: 'var(--font-inter)' }}
           />
           {errors.email && (
             <p className="text-sm text-red-400" style={{ fontFamily: 'Oxanium, monospace' }}>{errors.email.message}</p>
@@ -104,7 +104,7 @@ export const WaitlistForm = () => {
           type="submit"
           disabled={isSubmitting}
           className="w-full bg-green-400 hover:bg-green-300 text-black font-bold py-4 px-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-black disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
-          style={{ fontFamily: 'Oxanium, monospace' }}
+          style={{ fontFamily: 'var(--font-orbitron)' }}
         >
           {isSubmitting
             ? (
